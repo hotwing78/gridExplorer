@@ -5,15 +5,19 @@ module.exports = Backbone.View.extend({
     },
 
     events: {
+        'click #start': 'start',
         'click .north': 'clickNorth',
         'click .east': 'clickEast',
         'click .south': 'clickSouth',
         'click .west': 'clickWest',
     },
 
+    start: function(){
+      this.model.start();
+    },
 
     clickNorth: function() {
-      
+
         this.model.north();
     },
 

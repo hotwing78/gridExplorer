@@ -1,12 +1,6 @@
-let gridControlModel = require('./models/gridControl.js')
-let gridControlView = require('./views/gridControl.js')
+let AppRouter = require('./router');
 
 window.addEventListener('load', function(){
-
-  let grpModel = new gridControlModel();
-
-  let grpView = new gridControlView({
-      model: grpModel,
-      el: document.getElementById('main')
-  });
-});
+    let router = new AppRouter();
+    Backbone.history.start();
+})

@@ -7,17 +7,52 @@
 </head>
 
 <body>
-    <section id ="main">
-        <section class="signIn hidden">
-            <input type="text" placeholder="Name:">
-            <button id='start'>START</button>
+
+    <section id="main">
+      <!--the start screen-->
+        <section class="signIn">
+            <input type="text" id='name' placeholder="Name:">
+            <fieldset>
+                <button id='small'><a href="#start">Small</a></button>
+                <button id='large'><a href="#start">Large</a></button>
+                <button id='gargantuan'><a href="#start">Gargantuan</a></button>
+            </fieldset>
         </section>
-        <section class="directContainer">
-            <button class="direct north">N</button>
-            <button class="direct east">E</button>
-            <button class="direct south">S</button>
-            <button class="direct west">W</button>
-            <span class="coordinates"></span>
+        <!--the game screen-->
+        <section class ="game hidden">
+
+              <!--Grid---->
+            <div id="theGrid"></div>
+
+              <!--Player Info--->
+            <div id="playerInfo">
+              <div class="playerAttribute">
+                Name:<span id = 'player'></span>
+              </div>
+              <div class="playerAttribute">
+                Type:<span id = 'type'></span>
+              </div>
+              <div class="playerAttribute">
+                Energy:<span id = 'energy'></span>
+              </div>
+              <div class="playerAttribute">
+                Moves:<span id = 'moves'></span>
+              </div>
+            </div>
+
+            <!--Directions---->
+            <div class='directContainer'>
+                <button class="direct north">N</button>
+                <button class="direct east">E</button>
+                <button class="direct south">S</button>
+                <button class="direct west">W</button>
+                <span class="coordinates"></span>
+            </div>
+        </section>
+
+        <!--the game over screen-->
+        <section class = "gameOver hidden">
+
         </section>
     </section>
 
