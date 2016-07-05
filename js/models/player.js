@@ -152,6 +152,7 @@ module.exports = Backbone.Model.extend({
         //     "score": this.get('moves'),
         //     "playerType": this.get('size'),
         // });
+      
          this.getScores();
     },
 
@@ -161,7 +162,7 @@ module.exports = Backbone.Model.extend({
             success: function() {
             that.trigger('scores')
             console.log('trigger successful');
-            console.log(that);
+            console.log(typeof that);
             },
             error: function() {
                 console.log('dont work');

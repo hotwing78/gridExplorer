@@ -161,6 +161,7 @@ module.exports = Backbone.Model.extend({
         //     "score": this.get('moves'),
         //     "playerType": this.get('size'),
         // });
+      
          this.getScores();
     },
 
@@ -170,7 +171,7 @@ module.exports = Backbone.Model.extend({
             success: function() {
             that.trigger('scores')
             console.log('trigger successful');
-            console.log(that);
+            console.log(typeof that);
             },
             error: function() {
                 console.log('dont work');
@@ -299,12 +300,24 @@ module.exports = Backbone.View.extend({
   },
 
   postScores: function(){
-    // let container = document.querySelector('.gameOver');
-    // let gameO = document.createElement('div');
+    let container = document.querySelector('.gameOver');
+    let gameO = document.createElement('div');
+      let that = this.model.highscores
     console.log('trigger')
-    this.model.highscores.forEach(function(model){
-      console.log(model);
-    });
+
+    for(x = 0; x < 5; x++){
+      let score = {
+        name: that.models[x].attributes.name,
+        score: that.models[x].attributes.score,
+        type: that.models[x].attributes.playerType,
+      }
+      gameO.textContent = `Name: ${score.name}
+                           Score: ${score.score}
+                           type: ${score.type}`;
+      container.appendChild(gameO);
+    }
+
+
   },
 
 });
