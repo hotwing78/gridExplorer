@@ -26,10 +26,10 @@ module.exports = Backbone.Router.extend({
             el: document.querySelector('.gameOver')
         }); //end of game over view
 
-        this.newGame.on('gameOver', function(model) {
+          player.on('gameOver', function() {
             this.navigate('gameOver', {
                 trigger: true
-            })
+            });
         }, this);
 
     }, //End of initialize

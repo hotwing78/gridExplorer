@@ -30,15 +30,16 @@ module.exports = Backbone.View.extend({
 
     let grid = document.querySelector('#theGrid');
     let gridSize = 10;
-    let row = document.createElement('div');
-    let column = document.createElement('div');
+
 
 
     grid.innerHTML = '';
     for (let x = 0; x < gridSize; x++) {
+      let row = document.createElement('div');
         row.classList.add('row');
         grid.appendChild(row);
-        for (var y = 0; y < gridSize; y++) {
+        for (var y = 0; y < gridSize; y++) {      
+          let column = document.createElement('div');
             column.classList.add('column');
             row.appendChild(column);
 
